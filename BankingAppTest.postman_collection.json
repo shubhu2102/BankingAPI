@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "644d19ef-4e54-4de5-ad19-5a95970039de",
+		"name": "BankingAppTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37924739"
+	},
+	"item": [
+		{
+			"name": "CreateAccount",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountNumber\":\"4532567\",\r\n    \"balance\":\"100.0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/accounts/create"
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/accounts/3"
+			},
+			"response": []
+		},
+		{
+			"name": "getBalance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/accounts/23439012/balance"
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/accounts/transfer?source=23439012&target=12345&amount=1000",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"accounts",
+						"transfer"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "23439012"
+						},
+						{
+							"key": "target",
+							"value": "12345"
+						},
+						{
+							"key": "amount",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllAccount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/accounts"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAccount",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/api/accounts/23439012"
+			},
+			"response": []
+		}
+	]
+}
